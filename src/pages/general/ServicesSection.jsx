@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
 const services = [
-  "AI Symptom Checker",
-  "Doctor Consultation",
+  "Symptom Analysis",
   "Health Records",
+  "AI Insights",
   "Nearby Prediction"
 ];
 

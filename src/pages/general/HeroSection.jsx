@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 function HeroSection() {
+  const navigate = useNavigate();
   return (
     <section id="hero" className="relative pt-[120px] pb-20 overflow-hidden">
 
@@ -23,20 +25,29 @@ function HeroSection() {
           </h1>
 
           <p className="mt-6 text-gray-600 dark:text-gray-300 text-lg">
-            Diagnose symptoms, consult doctors, and manage your health —
-            all in one intelligent platform.
+            Get AI-powered health insights, predict risks in your area, 
+            and manage your health records — all in one intelligent platform.
           </p>
 
           <div className="mt-8 flex gap-4">
-            <button className="px-6 py-3 bg-primary text-white rounded-xl shadow-lg hover:scale-105 transition">
+            <button
+              onClick={() => navigate("/login")}
+              className="px-6 py-3 bg-primary text-white rounded-xl shadow-lg hover:scale-105 transition"
+            >
               Get Started
             </button>
 
-            <button className="px-6 py-3 border border-gray-300 dark:border-gray-600 
+            <button
+              onClick={() => {
+                const section = document.getElementById("about");
+                section?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="px-6 py-3 border border-gray-300 dark:border-gray-600 
               text-gray-800 dark:text-gray-200
               rounded-xl 
               hover:bg-gray-100 dark:hover:bg-gray-800 
-              transition">
+              transition"
+            >
               Learn More
             </button>
           </div>
@@ -62,7 +73,7 @@ function HeroSection() {
             rounded-xl shadow-xl">
 
             <p className="text-sm font-medium text-gray-800 dark:text-white">
-              AI Diagnosis ⚡ Real-time Insights
+              AI Insights ⚡ Local Predictions
             </p>
           </div>
 
